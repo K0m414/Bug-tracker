@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Bug tracker</title>
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- responsive -->
+    <link rel="stylesheet" media="screen and (min-width:480px) and (max-width:959px)" href="css/styles.css" />
+    <link rel="stylesheet" media="screen and (min-width:960px)" href="css/styles.css" />
+
+    <!-- lien css -->
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+
+
+</head>
+
+<body id="main-page">
+    <header>
+        <h1>Bug tracker</h1>
+        <ul>
+            <li>nb bug</li>
+            <li>nb en cours</li>
+            <li>nb traité</li>
+        </ul>
+        <menu>
+            <li class="button">Liste complète</li>
+            <li class="button">A traiter</li>
+            <li class="button"><a href="add-bug.html">Ajouter</a></li>
+            <li class="button">Déconnexion</li>
+        </menu>
+    </header>
+    <main>
+        <table>
+            <!-- <caption>
+                
+            </caption> -->
+            <tr>
+                <th scope="col">Désignation</th>
+                <th scope="col">Date</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Etat</th>
+                <th scope="col"></th>
+            </tr>
+            <tr>
+                <td>titre du bug</td>
+                <td>15/54/1544</td>
+                <td>nom d'utilisateur</td>
+                <td>
+                    <select name="etat" id="etat">
+                    <option value="">etat</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    </select>
+                </td>
+                <td><button class="button">Suprimer</button></td>
+
+            </tr>
+
+        </table>
+    </main>
+    <footer>
+        <p>Copyright © 2021 K.Komala</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
