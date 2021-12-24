@@ -149,23 +149,6 @@ footer {
     }
 }
 
-#add-bug header {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#add-bug header menu {
-    font-size: 1em;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-}
-
-#add-bug li {
-    padding-left: 0.5em;
-}
-
 @media screen and (min-width:480px) and (max-width:959px) {
     form {
         width: 50%;
@@ -209,6 +192,20 @@ footer {
         font-size: 12px;
         text-align: center;
         padding: 8px;
+    }
+    #add-bug header {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #add-bug header menu {
+        font-size: 1em;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+    }
+    #add-bug li {
+        padding-left: 0.5em;
     }
 }
 
@@ -258,5 +255,19 @@ footer {
         font-size: 12px;
         text-align: center;
         padding: 8px;
+    }
+    #add-bug header {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #add-bug header menu {
+        font-size: 1em;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+    }
+    #add-bug li {
+        padding-left: 0.5em;
     }
 }

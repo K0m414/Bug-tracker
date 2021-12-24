@@ -3,25 +3,48 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     //VARIABLE
     const apiURL = 'http://greenvelvet.alwaysdata.net/bugTracker/api/login';
-    const errorText = document.querySelector('.error');
+    const errorList = document.querySelector('.error');
     let errors = [];
 
     let buttonLogin = document.querySelector('#connection');
     let username = document.querySelector('#username');
     let password = document.querySelector('#password');
+    let userToken;
+    let userId;
     // console.log(username.value)
     buttonLogin.addEventListener('click', (e) => {
         e.preventDefault();
+
         console.log(username.value, password.value)
-        fetch(`${apiURL}/${username.value}/${password.value}`)
-            .then(response => response.json())
-            .then(json => {
-                console.log(json.result.id)
-                window.location.replace('main-page.html?user_id=' + json.result.id)
-            })
-            .catch(err => {
-                console.log(err);
-            })
+        if (username.value === '') {
+            errors.push('Veuillez entrer votre identifiant')
+        }
+        if (password.value === '') {
+            errors.push('Veuillez entrer votre mot de passe')
+        } else {
+            fetch(`${apiURL}/${username.value}/${password.value}`)
+                .then(response => response.json())
+                .then(json => {
+                    console.log(json.result.token)
+                    userToken = json.result.token;
+                    userId = json.result.id;
+                    if (userToken !== 0) {
+                        sessionStorage.setItem("id", [userId]);
+                        sessionStorage.setItem("token", [userToken]);
+
+                        window.location.replace('main-page.html?user_id=' + json.result.id)
+                    } else {
+                        errors.push('Mot de passe ou l\'identifiant n\'est reconnu')
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        }
+
+        console.log(errors)
+
+        errors.map(error => errorList.innerHTML += `<li> ${error}</li>`)
     })
 
 });

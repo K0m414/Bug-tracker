@@ -23,9 +23,9 @@
     <header>
         <h1>Bug tracker</h1>
         <menu>
-            <li class="button">Liste complète</li>
+            <a class="button" href="main-page.html">Liste des bugs</a>
             <li class="button">A traiter</li>
-            <li class="button"><a href="add-bug.html">sauvegarder</a></li>
+            <li id="save" class="button">sauvegarder</li>
         </menu>
     </header>
     <main>
@@ -34,17 +34,17 @@
             <fieldset>
                 <legend>Ajouter un nouveau bug</legend>
                 <label for="bug-title">Titre du bug</label>
-                <input type="text" placeholder="Titre">
+                <input id="bug-title" type="text" placeholder="Titre">
 
                 <label for="bug-description">Description</label>
-                <textarea placeholder="Description du bug"></textarea>
+                <textarea id="bug-description" placeholder="Description du bug"></textarea>
             </fieldset>
         </form>
     </main>
     <footer>
         <p>Copyright © 2021 K.Komala</p>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="js/add-bug.js"></script>
 </body>
 
 </html>

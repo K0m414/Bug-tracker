@@ -28,18 +28,29 @@
             <li>nb traité</li>
         </ul>
         <menu>
-            <li class="button">Liste complète</li>
+            <li id="table-list" class="button">Liste des bugs</li>
             <li class="button">A traiter</li>
-            <li class="button"><a href="add-bug.html">Ajouter</a></li>
+            <a class="button" href="add-bug.html">Ajouter</a>
             <li class="button">Déconnexion</li>
         </menu>
     </header>
     <main>
         <table>
+            <thead>
+                <tr>
+                    <th scope="col">Désignation</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Etat</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
             <!-- <caption>
                 
             </caption> -->
-            <thead>
+            <!-- <thead>
                 <tr>
                     <th scope="col">Désignation</th>
                     <th scope="col">Date</th>
@@ -63,7 +74,7 @@
                     <td><button class="button">Suprimer</button></td>
 
                 </tr>
-            </tbody>
+            </tbody> -->
 
 
         </table>
@@ -71,7 +82,7 @@
     <footer>
         <p>Copyright © 2021 K.Komala</p>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="js/main-page.js"></script>
 </body>
 
 </html>
