@@ -16,66 +16,34 @@
     <link rel="stylesheet" href="css/normalize.css" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" type="text/css">
 
-
 </head>
 
 <body id="main-page">
     <header>
         <h1>Bug tracker</h1>
-        <ul>
-            <li>nb bug</li>
-            <li>nb en cours</li>
-            <li>nb traité</li>
-        </ul>
-        <menu>
-            <li id="table-list" class="button">Liste des bugs</li>
-            <li class="button">A traiter</li>
-            <a class="button" href="add-bug.html">Ajouter</a>
-            <li class="button">Déconnexion</li>
-        </menu>
+        
+        <nav class="navMenu">
+            <li id="bug-list" class="nav">Liste des bugs</li>
+            <li id="my-bugs"class="nav">Mes bugs</li>
+            <a class="nav" href="add-bug.html">Ajouter</a>
+            <li class="nav logout">Déconnexion</li>
+        </nav>
     </header>
-    <main>
-        <table>
+    <main class="table-wrapper">
+        
+        <table class="fl-table">
+            <caption></caption>
             <thead>
                 <tr>
                     <th scope="col">Désignation</th>
                     <th scope="col">Date</th>
                     <th scope="col">Nom</th>
                     <th scope="col">Etat</th>
-                    <th scope="col"></th>
+                    <th scope="col">Supprimer</th>
                 </tr>
             </thead>
             <tbody>
             </tbody>
-            <!-- <caption>
-                
-            </caption> -->
-            <!-- <thead>
-                <tr>
-                    <th scope="col">Désignation</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Etat</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>titre du bug</td>
-                    <td>15/54/1544</td>
-                    <td>nom d'utilisateur</td>
-                    <td>
-                        <select name="etat" id="etat">
-                    <option value="">etat</option>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                    </select>
-                    </td>
-                    <td><button class="button">Suprimer</button></td>
-
-                </tr>
-            </tbody> -->
-
 
         </table>
     </main>

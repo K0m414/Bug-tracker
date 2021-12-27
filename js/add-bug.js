@@ -2,19 +2,28 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
     //VARIABLE
-    const apiURL = 'http://greenvelvet.alwaysdata.net/bugTracker/api/add';
-
-
-    let userToken = sessionStorage.getItem("token");
-    let userId = sessionStorage.getItem("id");
-    let save = document.querySelector('#save')
-
+    const apiURLAdd = 'http://greenvelvet.alwaysdata.net/bugTracker/api/add';
+    const apiURLDelete = 'http://greenvelvet.alwaysdata.net/bugTracker/api/delete';
+    
+    // document
+    const logoutButton = document.querySelector('.logout');
+    const myBugs = document.querySelector('.my-bugs')
+    const save = document.querySelector('#save')
     let bugTitle = document.querySelector('#bug-title')
     let bugDescription = document.querySelector('#bug-description')
-    console.log(`${apiURL}/${userToken}/${userId}`)
 
+    // sessionStorage
+    const userToken = sessionStorage.getItem("token");
+    const userId = sessionStorage.getItem("id");
+
+
+    myBugs.addEventListener('click', () => {
+            sessionStorage.setItem('bugsFullList', false);
+        })
+
+    // add a new bug
     save.addEventListener('click', () => {
-        fetch(`${apiURL}/${userToken}/${userId}`, {
+        fetch(`${apiURLAdd}/${userToken}/${userId}`, {
 
             // Adding method type
             method: "POST",
@@ -29,11 +38,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
         .then((res) => res.json())
             .then((response) => {
                 console.log(response);
+                window.location.replace('main-page.html')
             })
             .catch(err => {
                 console.log(err);
             })
 
     })
+        logoutButton.addEventListener('click', () => {
+                fetch(`http://greenvelvet.alwaysdata.net/bugTracker/api/logout/${userToken}`)
+                .then(response => response.json())
+                .then(json => { console.log(json)
+                    sessionStorage.clear();
+                    window.location.replace('index.html')
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        })
+
 
 });

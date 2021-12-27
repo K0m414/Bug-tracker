@@ -37,10 +37,29 @@ a {
     text-align: center;
 }
 
-main {
+#log-in main {
     display: flex;
     justify-content: center;
 }
+#register main {
+    display: flex;
+    justify-content: center;
+}
+#add-bug main {
+    display: flex;
+    justify-content: center;
+}
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }
 
 form {
     width: 90%;
@@ -103,52 +122,98 @@ input {
     background-color: var(--button-hover-color);
 }
 
+.nav{
+    text-align: center;
+    list-style: none;
+    margin: 8px;
+    background-color: var(--button-bg-color);
+    color: var(--button-color);
+    padding: 15px;
+    border-bottom: 5px solid var(--button-hover-color);
+    }
+.nav a{
+    display: flex;
+    justify-content: center;
+    
+    }
+.navMenu{
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
+}
+
+.nav:hover {
+    background-color: var(--button-hover-color);
+}
+caption{
+    text-align: center;
+    padding: 2%;
+    width: 100%;
+}
+.delete{
+    background-color: var(--button-bg-color);
+    color: var(--button-color);
+    padding: 10px; 
+    border-radius: 5px;
+}
+option{
+    background-color: var(--button-bg-color);
+    color: var(--button-color);
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: var(--button-hover-color);
+}
+
 footer {
     padding: 15px 0;
     text-align: center;
 }
 
 @media (max-width: 479px) {
-    /* Table Styles */
-    #main-page table {
-        border: none;
-        border-collapse: collapse;
-        white-space: nowrap;
+    table {
         display: block;
         width: 100%;
     }
-    #main-page table thead,
-    #main-page table tbody,
-    #main-page table thead th {
+    table thead, table tbody, table thead th {
         display: block;
     }
-    #main-page table thead {
+    table thead th:last-child{
+        border-bottom: none;
+    }
+    table thead {
         float: left;
     }
-    #main-page table tbody {
+    table tbody {
         width: auto;
         position: relative;
         overflow-x: auto;
     }
-    #main-page table td,
-    #main-page table th {
+    table td, table th {
+        
         height: 60px;
         vertical-align: middle;
         box-sizing: border-box;
         overflow-x: hidden;
         overflow-y: auto;
         width: 120px;
+        font-size: 13px;
         text-overflow: ellipsis;
-        border: 1px solid #f8f8f8;
-        text-align: center;
-        padding: 8px;
     }
-    #main-page table tbody td {
+    table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    table tbody tr {
+        display: table-cell;
+    }
+
+    table tbody td {
         display: block;
         text-align: center;
     }
 }
-
 @media screen and (min-width:480px) and (max-width:959px) {
     form {
         width: 50%;
@@ -161,30 +226,45 @@ footer {
     h1 {
         margin: 0;
     }
-    #main-page header ul {
+    
+    .navMenu {
         font-size: 1em;
         margin: 0;
         display: flex;
         justify-content: space-between;
+        flex-direction: row;
         list-style: none;
+        margin-bottom: 8%;
     }
-    #main-page header menu {
-        font-size: 1em;
-        margin: 0;
+
+    .nav{
+        margin: 8px;
+        background-color: var(--button-bg-color);
+        color: var(--button-color);
+        padding: 15px;
+        border-bottom: 5px solid var(--button-hover-color);
+    }
+
+    .nav:hover {
+        background-color: var(--button-hover-color);
+    }
+    #main-page main{
         display: flex;
-        justify-content: space-between;
-        list-style: none;
-    }
-    #main-page li {
-        padding-left: 0.5em;
+        justify-content: center;
+        margin: auto;
+        width: 80%;
     }
     #main-page table {
-        margin: 1em;
-        width: 80%;
+         margin: 5%;
         border-radius: 16px;
         border: none;
         border-collapse: collapse;
         white-space: nowrap;
+    }
+    caption{
+        text-align: center;
+        padding: 2%;
+        font-size: 12px;
     }
     #main-page td,
     #main-page th {
@@ -224,26 +304,33 @@ footer {
     h1 {
         margin: 0;
     }
-    #main-page header ul {
+    .navMenu {
         font-size: 1em;
         margin: 0;
         display: flex;
         justify-content: space-between;
+        flex-direction: row;
         list-style: none;
+        margin-bottom: 5%;
+      }
+    .nav{
+        margin: 8px;
+        background-color: var(--button-bg-color);
+        color: var(--button-color);
+        padding: 15px;
+        border-bottom: 5px solid var(--button-hover-color);
     }
-    #main-page header menu {
-        font-size: 1em;
-        margin: 0;
+
+    .nav:hover {
+        background-color: var(--button-hover-color);
+    }
+    #main-page main{
         display: flex;
-        justify-content: space-between;
-        list-style: none;
-    }
-    #main-page li {
-        padding-left: 0.5em;
-    }
-    #main-page table {
-        margin: 1em;
+        justify-content: center;
+        margin: auto;
         width: 80%;
+    }
+    #main-page table { 
         border-radius: 16px;
         border: none;
         border-collapse: collapse;

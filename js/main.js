@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // console.log(username.value)
     buttonLogin.addEventListener('click', (e) => {
         e.preventDefault();
-
+        errors = [];
         console.log(username.value, password.value)
         if (username.value === '') {
             errors.push('Veuillez entrer votre identifiant')
@@ -28,12 +28,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     console.log(json.result.token)
                     userToken = json.result.token;
                     userId = json.result.id;
-                    if (userToken !== 0) {
+                    console.log(json.result.status);
+                    if (userId !== 0) {
+                        console.log(userToken);
                         sessionStorage.setItem("id", [userId]);
                         sessionStorage.setItem("token", [userToken]);
-
-                        window.location.replace('main-page.html?user_id=' + json.result.id)
-                    } else {
+                        let bugsFullList= true;
+                        sessionStorage.setItem('bugsFullList', bugsFullList);
+                        window.location.replace('main-page.html')
+                    } 
+                    else{
                         errors.push('Mot de passe ou l\'identifiant n\'est reconnu')
                     }
                 })
@@ -43,7 +47,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
 
         console.log(errors)
-
+        errorList.innerHTML =
         errors.map(error => errorList.innerHTML += `<li> ${error}</li>`)
     })
 
